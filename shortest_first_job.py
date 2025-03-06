@@ -13,15 +13,13 @@ def calculate_sjf():
                 available.append(process)
         
         if available:
-            # Sort by burst time, then by arrival time for fairness
-            available.sort(key=lambda x: (x[2]))  
+            available.sort(key=lambda x: (x[2]))  # Sort by burst time
             current_process = available.pop(0)
             execution_order.append(current_process[0])
             current_time += current_process[2]
             completed.append(current_process)
         else:
-            # If no process is available, increment time
-            current_time += 1
+            current_time += 1             # If no process is available, increment time
     
     # Calculate Completion, Turnaround, and Waiting times
     completion_times = {}
