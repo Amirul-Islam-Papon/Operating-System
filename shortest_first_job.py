@@ -52,4 +52,5 @@ process_data = [
     ('P5', 4, 4)
 ]
 
+
 calculate_sjf()
