@@ -31,13 +31,10 @@ def sjf_scheduling(processes):
             is_done[idx] = True
             completed += 1
 
-    print("PID\tArrival\tBurst\tStart\tCompletion\tWaiting\tTurnaround")
+    print("PID\tArrival\tBurst\tCompletion\tWaiting\tTurnaround")
     for i in range(n):
         pid, arrival, burst = processes[i]
-        print(f"{pid}\t{arrival}\t{burst}\t{start[i]}\t{completion[i]}\t\t{waiting[i]}\t{turnaround[i]}")
-
-    print(f"\nAverage Waiting Time: {sum(waiting)/n:.2f}")
-    print(f"Average Turnaround Time: {sum(turnaround)/n:.2f}")
+        print(f"{pid}\t{arrival}\t\t{burst}\t\t{completion[i]}\t\t\t{waiting[i]}\t\t{turnaround[i]}")
 
 process_list = [(1, 2, 4), (2, 10, 1), (3, 3, 2), (4, 2, 5), (5, 0, 5)]
 sjf_scheduling(process_list)
